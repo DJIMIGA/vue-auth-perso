@@ -1,3 +1,4 @@
+from django.contrib.auth.models import UserManager
 from django.db import models
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 
@@ -36,3 +37,4 @@ class CustomUser(AbstractBaseUser):
     zip_code = models.CharField(max_length=5, blank=False)
 
     USERNAME_FIELD = "email"
+    objects = UserManager()

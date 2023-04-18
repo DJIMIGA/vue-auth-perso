@@ -19,3 +19,7 @@ def signup(request):
         form = UserRegistrationsForm()
 
     return render(request, "accounts/vue-auth-perso.html", {"form": form})
+
+
+def profile(request):
+    return HttpResponse(f"Bienvenue {request.user.email}")
